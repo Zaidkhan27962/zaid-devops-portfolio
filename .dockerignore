@@ -1,0 +1,10 @@
+.git
+.gitignore
+node_modules
+README.md
+.env
+*.md
+.DS_Store
+Thumbs.db
+docker-compose.yml
+.Dockerfile.swp
