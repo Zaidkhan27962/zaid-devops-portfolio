@@ -141,3 +141,15 @@ resource "aws_instance" "portfolio_ec2" {
     Name = "portfolio-ec2"
   }
 }
+resource "aws_eip" "portfolio_eip" {
+  domain = "vpc"
+
+  tags = {
+    Name = "portfolio-eip"
+  }
+}
+
+resource "aws_eip_association" "portfolio_eip_assoc" {
+  instance_id   = aws_instance.portfolio_ec2.id
+  allocation_id = aws_eip.portfolio_eip.id
+}
